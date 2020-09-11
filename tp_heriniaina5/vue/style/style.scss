@@ -1,0 +1,320 @@
+@font-face{
+    font-family: 'poppins';
+    src:url("./Poppins-Regular.ttf");
+}
+@font-face{
+    font-family: 'dacing';
+    src: url("./DancingScript-VariableFont_wght.ttf");
+}
+
+$couleurPrimaire : #2e8b57;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: rgb(240,240,240);
+    .blog{
+        position: absolute;
+        top:0;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        .abonnementContact
+        {
+            z-index: 1000;
+            position: absolute;
+            top:0%;
+            left: 7.6%;
+            width: 25.5%;
+            height: 65%;
+            background: #e6e6e6;
+            padding: 10px;
+            form
+            {
+                position: relative;
+                top: 2%;
+                width: 100%;
+                height: 86%;
+                input[type="submit"]
+                {
+                    position: absolute;
+                    right: 0;
+                    bottom: 10px;
+                    display: inline-block;
+                    padding: 5px 40px;
+                    border: none;
+                    background: #e6e6e6;
+                    border-radius: 5px;
+                    color: #ff0056;
+                    letter-spacing: 1px;
+                    cursor: pointer;
+                    font-weight: 600;
+                    box-shadow: 7px 7px 15px rgba(0,0,0,0.2),
+                        -7px -7px 15px rgba(255,255,255, 1);
+                }
+                a{
+                    display: inline-block;
+                    color:red;
+                    position: relative;
+                    top: -30px;
+                }
+                label[for="pro"]{
+                    
+                    position: relative;
+                    width:100%;
+                    height: 12%;
+                    display: inline-block;
+                    input{
+                        display: none;
+                    }
+                    .motpro{
+                        position: absolute;
+                            top:0%;
+                            left: 13%;
+                            transform: translate(-13%,-0%);
+                            opacity: .7;
+                            cursor: pointer;
+                    }
+                    input:checked ~ .carre::before,input:checked ~ .carre::after
+                    {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                    input:checked ~ .motpro{
+                        text-decoration: line-through;
+                    }
+                    .carre{
+                        cursor: pointer;
+                        position: absolute;
+                        background: white;
+                        top: 0;
+                        left: 0;
+                        width: 20px;
+                        height: 20px;
+
+                        &::after{
+                            opacity: 0;
+                            visibility: hidden;
+                            content: "";
+                            position: absolute;
+                            top:50%;
+                            left: 50%;
+                            transform: translate(-50%,-50%) rotate(45deg);
+                            width: 10%;
+                            height: 70%;
+                            background: orangered;
+                        }
+                        &::before
+                        {
+                            opacity: 0;
+                            visibility: hidden;
+                            content: "";
+                            position: absolute;
+                            top:70%;
+                            left: 20%;
+                            transform: translate(-20%,-70%);
+                            width: 15%;
+                            height: 40%;
+                            background: orangered;
+                        }
+                    }
+                }
+                label:not(:last-child)
+                {
+                    position: relative;
+                    width:100%;
+                    height: 12%;
+                    // background: red;
+                    display: inline-block;
+                    margin-bottom: 10px;
+                    input{
+                        border: 1px solid white;
+                        font-size: 17px;
+                        // color:white;
+                        padding-left: 10px;
+                        position: absolute;
+                        top:0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: transparent;
+                        z-index: 10;
+                    }
+                    input:focus ~ .bar,input:valid ~ .bar{
+                        width: 100%;
+                    }
+                    input:focus ~ .attr,input:valid ~ .attr{
+                        transform: translate(75%,-30%);
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    .attr
+                    {
+                        transition: .5s;
+                        position: absolute;
+                        font-size: 17px;
+                        top: 50%;
+                        left: 7%;
+                        opacity: .7;
+                        transform: translate(-7%,-50%);
+                    }
+                    .bar
+                    {
+                        transition: .5s;
+                        position: absolute;
+                        top:0;
+                        left: 0;
+                        width: 3%;
+                        height: 100%;
+                        background: #fff;
+                    }
+                }
+            }
+            h1{
+                // background: red;
+                background: linear-gradient(to left,#ff0056,#ffa500);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+            }
+        }
+        .plus
+        {
+            position: absolute;
+            top:0;
+            left: .5%;
+            width: 90px;
+            height: 60px;
+            background: #e6e6e6;
+            // background: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-right: 1px solid white;
+            cursor: pointer;
+            span{
+                font-size: 50px;
+                color:white;
+            }
+        }
+        .abonez
+        {
+            cursor: pointer;
+            width: 327px;
+            height: 80px;
+            position: absolute;
+            top:67%;
+            left: 7.5%;
+            // display: flex;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            box-shadow: 7px 7px 15px rgba(0,0,0,0.2),
+                inset 7px 7px 15px rgba(0,0,0,0.2),
+                inset -7px -7px 15px rgba(255,255,255, 1),
+                        -7px -7px 15px rgba(255,255,255, 1);
+            &:hover{
+                box-shadow: 7px 7px 15px rgba(0,0,0,0.2),
+                        -7px -7px 15px rgba(255,255,255, 1);
+            }
+            a{
+                text-decoration: none;
+                color:#ff0056;
+            }
+        }
+        .contenair{
+            position: absolute;
+            top:0;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            h1
+            {
+                position: absolute;
+                top: 2%;
+                right: 2%;
+                color:#3f3d56;
+                font-size: 1.6em;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            section
+            {
+                position: absolute;
+                top: 15%;
+                right: 2%;
+                width: 38%;
+                height: 70%;
+                nav
+                {
+                    position: absolute;
+                    bottom:0;
+                    right: 0;
+                    width: 70%;
+                    height: 20%;
+                    ul{
+                        position: absolute;
+                        top:0;
+                        right: 0;
+                        width: 100%;
+                        height: 100%;
+                        list-style: none;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        li{
+                            img{
+                                cursor: pointer;
+                                margin-left: 15px;
+                                max-width: 50px;
+                                transition: .5s;
+                                &:hover{
+                                    filter: grayscale(100%);
+                                    transform: scale(1.2);
+                                }
+                            }
+                        }
+                    }
+                }
+                h2
+                {
+                    position: relative;
+                    float: right;
+                    span{
+                        color: $couleurPrimaire;
+                        font-size: 2.4em;
+                        font-family: 'dacing';
+                    }
+                }
+                p{
+                    clear: both;
+                    position: absolute;
+                    top: 20%;
+                    right: 0;
+                    width: 80%;
+                    
+                }
+            }
+        }
+        .background
+        {
+            position: absolute;
+            top:0;
+            width: 80%;
+            height: 100%;
+            background: url("../image/back.svg") no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+}
